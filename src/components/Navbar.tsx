@@ -10,6 +10,7 @@ interface Props {
 export default function Navbar({ smoothScroll, active, theme, toggleTheme }: Props) {
   const navItems = [
     { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About Me' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact Me' },
     { id: 'social', label: 'Social' }
