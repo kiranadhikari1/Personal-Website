@@ -18,7 +18,11 @@ html,
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
-  background-color: var(--dark-bg);
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--text-light);
 }
 
@@ -378,6 +382,7 @@ body.light-theme .contact-form textarea:focus {
   color: var(--text-light);
   resize: vertical;
   transition: background-color 0.3s ease;
+  box-sizing: border-box;
 }
 
 .contact-form input:focus,
