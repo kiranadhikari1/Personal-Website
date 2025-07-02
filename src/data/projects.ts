@@ -1,61 +1,54 @@
-// === src/data/projects.ts ===
-
 export interface Project {
   title: string;
   description: string;
-  image: string;
   tech: string[];
-  github?: string;
-  demo?: string;
+  github: string;
+  live?: string;
+  icon?: string;
 }
+const eldenringLogo = '/eldenringlogo.png';
 
 export const projects: Project[] = [
   {
-    title: 'Elden Ring Boss Tracker',
-    description: 'Track completion and deaths for every boss in Elden Ring.',
-    image: '/images/elden-ring.png',
-    tech: ['React', 'TypeScript', 'Vite'],
-    github: 'https://github.com/kiranadhikari1/elden-ring-tracker',
-    demo: 'https://eldenring.kiranadhikari.dev'
+    title: 'Selenium Automated Web Game',
+    description: 'Automates interaction with a web-based game using Selenium and Python.',
+    tech: ['Python'],
+    github: 'https://github.com/kiranadhikari1/Selenium-Automated-Interactive-Web-Game',
+    icon: '🎮'
   },
   {
-    title: 'Personal Portfolio',
-    description: 'A modern, responsive portfolio website to showcase projects and skills.',
-    image: '/images/portfolio.png',
-    tech: ['React', 'TypeScript', 'CSS Modules'],
-    github: 'https://github.com/kiranadhikari1/portfolio',
-    demo: 'https://kiranadhikari.dev'
+    title: 'Elevator Simulation',
+    description: 'Simulates elevator movement and request handling in Java.',
+    tech: ['Java'],
+    github: 'https://github.com/kiranadhikari1/elevatorSimulation',
+    icon: '🛗'
   },
   {
-    title: '---',
-    description: 'palceholder',
-    image: '/images/weather-app.png',
-    tech: ['React', 'OpenWeatherMap API', 'Tailwind CSS'],
-    github: 'https://github.com/kiranadhikari1/weather-app',
-    demo: 'https://weather.kiranadhikari.dev'
+    title: 'Neureset Device Simulator',
+    description: 'Simulates hardware interaction for the Neureset medical device.',
+    tech: ['Java'],
+    github: 'https://github.com/kiranadhikari1/Neureset-Device-Simulator',
+    icon: '🧠'
   },
   {
-    title: '---',
-    description: 'palceholder',
-    image: '/images/task-manager.png',
-    tech: ['React', 'TypeScript', 'Vite', 'LocalStorage'],
-    github: 'https://github.com/kiranadhikari1/task-manager',
-    demo: 'https://tasks.kiranadhikari.dev'
+    title: 'SCMS & C-V2X in QNX vs Cloud',
+    description: 'Comparison of QNX vs cloud deployment for SCMS and C-V2X systems.',
+    tech: ['Java'],
+    github: 'https://github.com/kiranadhikari1/SCMS-and-C-V2X-In-QNX-vs-Cloud-Deployment',
+    icon: '☁️'
   },
   {
-    title: '---',
-    description: 'palceholder',
-    image: '/images/blog-cms.png',
-    tech: ['Next.js', 'React', 'Markdown'],
-    github: 'https://github.com/kiranadhikari1/blog-cms',
-    demo: 'https://blogcms.kiranadhikari.dev'
+    title: 'Elden Ring Boss Checklist',
+    description: 'Track boss fights and progress in Elden Ring using a visual checklist.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    github: 'https://github.com/kiranadhikari1/eldenRing_bossChecklist',
+    icon: eldenringLogo
   },
   {
-    title: '---',
-    description: 'palceholder',
-    image: '/images/chat-app.png',
-    tech: ['React', 'Node.js', 'Socket.io'],
-    github: 'https://github.com/kiranadhikari1/chat-app',
-    demo: 'https://chat.kiranadhikari.dev'
+    title: 'Yukihira Themed Website',
+    description: 'A themed personal website styled after Yukihira restaurant from Shokugeki no Soma.',
+    tech: ['React', 'HTML', 'CSS'],
+    github: 'https://github.com/kiranadhikari1/yukihira-themed-website',
+    icon: '🍜'
   }
 ];

@@ -8,8 +8,8 @@ export default function Projects() {
       <div className="project-grid">
         {projects.map((proj) => (
           <article key={proj.title} className="project-card">
-            <img src={proj.image} alt={proj.title} loading="lazy" />
-            <h3>{proj.title}</h3>
+            {/* todo: to show icons before titles here.*/}
+            <h3>{proj.icon ? `${proj.icon} ${proj.title}` : proj.title}</h3>
             <p>{proj.description}</p>
             <ul className="tech-list">
               {proj.tech.map((t) => (
@@ -17,8 +17,16 @@ export default function Projects() {
               ))}
             </ul>
             <div className="project-links">
-              {proj.github && <a href={proj.github} target="_blank" rel="noopener noreferrer">GitHub</a>}
-              {proj.demo && <a href={proj.demo} target="_blank" rel="noopener noreferrer">Live Demo</a>}
+              {proj.github && (
+                <a href={proj.github} target="_blank" rel="noopener noreferrer">
+                  GitHub
+                </a>
+              )}
+              {proj.live && (
+                <a href={proj.live} target="_blank" rel="noopener noreferrer">
+                  Live Demo
+                </a>
+              )}
             </div>
           </article>
         ))}
