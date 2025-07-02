@@ -1,4 +1,3 @@
-import React from 'react';
 import { socialLinks } from '../data/socialLinks';
 
 interface Props {

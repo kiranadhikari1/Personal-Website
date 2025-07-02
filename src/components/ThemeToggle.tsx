@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface ThemeToggleProps {
   theme: 'light' | 'dark';
   toggleTheme: () => void;
