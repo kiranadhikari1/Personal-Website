@@ -3,7 +3,7 @@ import { projects } from '../data/projects';
 
 export default function Projects() {
   return (
-    <section id="projects" className="section-container" aria-label="Projects">
+    <section id="projects" className="section-container">
       <h2>Projects</h2>
       <div className="project-grid">
         {projects.map((proj) => (
@@ -17,16 +17,8 @@ export default function Projects() {
               ))}
             </ul>
             <div className="project-links">
-              {proj.github && (
-                <a href={proj.github} target="_blank" rel="noopener noreferrer" aria-label={`${proj.title} GitHub`}>
-                  GitHub
-                </a>
-              )}
-              {proj.demo && (
-                <a href={proj.demo} target="_blank" rel="noopener noreferrer" aria-label={`${proj.title} Live Demo`}>
-                  Live Demo
-                </a>
-              )}
+              {proj.github && <a href={proj.github} target="_blank" rel="noopener noreferrer">GitHub</a>}
+              {proj.demo && <a href={proj.demo} target="_blank" rel="noopener noreferrer">Live Demo</a>}
             </div>
           </article>
         ))}
