@@ -1,157 +1,68 @@
-/* Reset & base */
-html, body, #root {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
+:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #121212;
-  overflow-x: hidden;
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#root {
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
   display: flex;
-  flex-direction: column;
+  place-items: center;
+  min-width: 320px;
   min-height: 100vh;
 }
 
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #0d0d0d;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  z-index: 9999;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.8);
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
 }
 
-.nav-logo {
-  font-weight: 800;
-  font-size: 1.8rem;
-  color: #ffd700;
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
   cursor: pointer;
-  user-select: none;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-button {
-  background: none;
-  border: none;
-  color: #ccc;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.nav-button:hover,
-.nav-button:focus {
-  color: #ffd700;
-  background-color: rgba(255, 215, 0, 0.15);
-  outline: none;
-}
-
-/* Social icons container */
-.nav-socials {
-  display: flex;
-  gap: 1rem;
-  color: #ccc;
-}
-
-.nav-socials a {
-  color: #ccc;
-  transition: color 0.3s ease;
-}
-
-.nav-socials a:hover,
-.nav-socials a:focus {
-  color: #ffd700;
-  outline: none;
-}
-
-/* Hamburger menu for mobile */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-}
-
-.hamburger {
-  width: 25px;
-  height: 3px;
-  background-color: #ccc;
-  margin: 4px 0;
-  border-radius: 2px;
-}
-
-/* Landing section */
-.landing {
-  padding: 10rem 2rem 4rem; /* pad top for fixed navbar */
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  color: #eee;
-}
-
-.landing h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: #ffd700;
-}
-
-.landing p {
-  font-size: 1.4rem;
-  margin-bottom: 3rem;
-  color: #ddd;
-}
-
-.button-group {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.button {
-  background-color: #ffd700;
-  border: none;
-  color: #121212;
-  font-weight: 700;
-  padding: 0.75rem 2rem;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover,
-.button:focus {
-  background-color: #ffce00;
-  outline: none;
-}
-
-/* Responsive for mobile */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none !important;
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
   }
-  .menu-toggle {
-    display: flex;
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
   }
 }
