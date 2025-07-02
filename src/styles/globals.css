@@ -8,6 +8,9 @@
   --dark-text: #121212;
 }
 
+/* ───────────────────────────
+   Base & Theme
+─────────────────────────── */
 body,
 html,
 #root {
@@ -25,7 +28,8 @@ body.light-theme {
 }
 
 body.light-theme .navbar {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   color: var(--dark-text);
 }
 
@@ -54,26 +58,31 @@ body.light-theme .contact-form textarea:focus {
   background-color: #e0e0e0;
 }
 
+/* ───────────────────────────
+   Navbar
+─────────────────────────── */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  z-index: 9999;
+  background-color: rgba(18, 18, 18, 0.7);   /* semi‑transparent */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  z-index: 1000;
 }
 
 .nav-logo {
+  font-size: 2rem;
   font-weight: 900;
-  font-size: 1.9rem;
   color: var(--gold);
   cursor: pointer;
   user-select: none;
-  transition: color 0.3s ease;
+  letter-spacing: 1px;
 }
 
 .nav-links {
@@ -82,23 +91,42 @@ body.light-theme .contact-form textarea:focus {
 }
 
 .nav-button {
+  position: relative;
   background: none;
   border: none;
-  color: var(--text-muted);
-  font-weight: 600;
+  color: var(--text-light);
+  font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
 }
 
 .nav-button:hover,
-.nav-button:focus,
-.nav-button.active {
+.nav-button:focus {
   color: var(--gold);
-  background-color: rgba(255, 215, 0, 0.15);
-  outline: none;
+}
+
+.nav-button:hover::after,
+.nav-button:focus::after,
+.nav-button.active::after {
+  width: 100%;
+}
+
+.nav-socials {
+  display: flex;
+  align-items: center;
 }
 
 .nav-socials a {
@@ -121,69 +149,57 @@ body.light-theme .contact-form textarea:focus {
   cursor: pointer;
 }
 
+/* ───────────────────────────
+   Landing Section
+─────────────────────────── */
 .landing {
+  position: relative;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   padding: 0 2rem;
   text-align: center;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  overflow: hidden;
+}
+
+.landing::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, transparent 60%);
+  animation: rotate 60s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 .landing-content {
+  position: relative;
+  z-index: 1;
   max-width: 700px;
   animation: fadeInUp 1s ease forwards;
 }
 
 .landing-title {
-  font-size: 3.8rem;
+  font-size: 3.5rem;
   font-weight: 900;
   margin-bottom: 1rem;
   color: var(--gold);
+  line-height: 1.2;
 }
 
 .landing-subtitle {
-  font-size: 1.6rem;
-  margin-bottom: 2.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
   color: var(--text-muted);
-}
-
-.button-group {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.button {
-  border-radius: 30px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  padding: 0.9rem 2.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  border: none;
-}
-
-.button.primary {
-  background-color: var(--gold);
-  color: #121212;
-}
-
-.button.primary:hover {
-  background-color: #ffce00;
-  transform: scale(1.05);
-}
-
-.button.secondary {
-  background-color: #444;
-  color: var(--text-light);
-}
-
-.button.secondary:hover {
-  background-color: #666;
-  transform: scale(1.05);
 }
 
 .scroll-down-indicator {
@@ -194,26 +210,66 @@ body.light-theme .contact-form textarea:focus {
   user-select: none;
 }
 
+/* ───────────────────────────
+   Buttons
+─────────────────────────── */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.9rem 2.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.button.primary {
+  background-color: var(--gold);
+  color: #121212;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.45);
+}
+
+.button.primary:hover,
+.button.primary:focus {
+  background-color: #ffce00;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+.button.secondary {
+  background-color: #444;
+  color: var(--text-light);
+}
+
+.button.secondary:hover,
+.button.secondary:focus {
+  background-color: #666;
+  transform: scale(1.05);
+}
+
+/* ───────────────────────────
+   Animations (base)
+─────────────────────────── */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(15%);
-  }
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(15%); }
 }
 
+/* ───────────────────────────
+   Generic Section Container
+─────────────────────────── */
 .section-container {
   padding: 6rem 2rem;
   max-width: 960px;
@@ -221,6 +277,9 @@ body.light-theme .contact-form textarea:focus {
   text-align: center;
 }
 
+/* ───────────────────────────
+   Projects Grid
+─────────────────────────── */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -229,30 +288,22 @@ body.light-theme .contact-form textarea:focus {
 }
 
 @media (max-width: 992px) {
-  .project-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 650px) {
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
+  .project-grid { grid-template-columns: 1fr; }
 }
-
 
 .project-card {
   background-color: #1e1e1e;
   padding: 1rem;
   border-radius: 12px;
-  text-align: left;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -260,22 +311,8 @@ body.light-theme .contact-form textarea:focus {
   box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
 }
 
-.project-card img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  flex-shrink: 0;
-}
-
-.project-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-.project-card p {
-  flex-grow: 1;
-  margin-bottom: 1rem;
-}
+.project-card h3 { margin: 0 0 0.5rem; }
+.project-card p  { flex-grow: 1; margin-bottom: 1rem; }
 
 .tech-list {
   list-style: none;
@@ -292,13 +329,12 @@ body.light-theme .contact-form textarea:focus {
   border-radius: 6px;
   font-size: 0.9rem;
   color: var(--text-muted);
-  flex-shrink: 0;
 }
 
 .project-links {
-  margin-top: auto;
   display: flex;
   gap: 1rem;
+  margin-top: auto;
 }
 
 .project-links a {
@@ -308,12 +344,11 @@ body.light-theme .contact-form textarea:focus {
   white-space: nowrap;
 }
 
-.project-links a:hover {
-  text-decoration: underline;
-}
+.project-links a:hover { text-decoration: underline; }
 
-/* Contact Section */
-
+/* ───────────────────────────
+   Contact Section
+─────────────────────────── */
 .contact-wrapper {
   background-color: var(--dark-bg-transparent);
   padding: 2rem;
@@ -353,31 +388,41 @@ body.light-theme .contact-form textarea:focus {
 
 .contact-form textarea {
   min-height: 120px;
-  max-height: 180px; /* Optional: prevent huge textareas */
+  max-height: 180px;
 }
 
-/* Responsive */
-
+/* ───────────────────────────
+   Responsive Tweaks
+─────────────────────────── */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
+  .nav-links { display: none; }
 
-  .landing-title {
-    font-size: 2.6rem;
-  }
+  .landing-title { font-size: 2.6rem; }
+  .landing-subtitle { font-size: 1.2rem; }
 
-  .landing-subtitle {
-    font-size: 1.2rem;
-  }
+  .button { font-size: 1rem; padding: 0.75rem 2rem; }
 
-  .button {
-    font-size: 1rem;
-    padding: 0.75rem 2rem;
-  }
+  .contact-wrapper { max-width: 90%; padding: 1.5rem; }
+}
 
-  .contact-wrapper {
-    max-width: 90%;
-    padding: 1.5rem;
-  }
+.social-icons-large {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons-large a {
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+  user-select: none;
+  font-style: italic;
 }

@@ -9,7 +9,7 @@ export default function Landing({ smoothScroll }: Props) {
     <main className="landing" id="home">
       <div className="landing-content">
         <h1 className="landing-title">Hi, I'm Kiran Adhikari</h1>
-        <p className="landing-subtitle">Frontend Developer passionate about React & TypeScript</p>
+        <p className="landing-subtitle"> </p>
         <div className="button-group">
           <button className="button primary" onClick={() => smoothScroll('projects')}>
             View Projects

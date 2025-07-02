@@ -1,5 +1,6 @@
 import React from 'react';
 import { projects } from '../data/projects';
+import { FaGithub } from 'react-icons/fa';
 
 export default function Projects() {
   return (
@@ -8,8 +9,19 @@ export default function Projects() {
       <div className="project-grid">
         {projects.map((proj) => (
           <article key={proj.title} className="project-card">
-            {/* todo: to show icons before titles here.*/}
-            <h3>{proj.icon ? `${proj.icon} ${proj.title}` : proj.title}</h3>
+            <h3>
+              {proj.icon && proj.icon.endsWith('.png') ? (
+                <img 
+                  src={proj.icon} 
+                  alt={`${proj.title} logo`} 
+                  style={{ width: 24, height: 24, verticalAlign: 'middle', marginRight: 8 }} 
+                />
+              ) : (
+                proj.icon
+              )} 
+              {proj.title}
+            </h3>
+
             <p>{proj.description}</p>
             <ul className="tech-list">
               {proj.tech.map((t) => (
@@ -18,8 +30,14 @@ export default function Projects() {
             </ul>
             <div className="project-links">
               {proj.github && (
-                <a href={proj.github} target="_blank" rel="noopener noreferrer">
-                  GitHub
+                <a
+                  href={proj.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`GitHub repository for ${proj.title}`}
+                  style={{ fontSize: '1.4rem', color: 'var(--gold)' }}
+                >
+                  <FaGithub />
                 </a>
               )}
               {proj.live && (

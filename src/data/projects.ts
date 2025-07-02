@@ -6,7 +6,7 @@ export interface Project {
   live?: string;
   icon?: string;
 }
-const eldenringLogo = '/eldenringlogo.png';
+const eldenringLogo = '/eldenRingLogo.png';
 
 export const projects: Project[] = [
   {
