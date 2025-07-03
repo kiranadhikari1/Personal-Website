@@ -1,10 +1,9 @@
 export default function Resume() {
   return (
     <main className="section-container" style={{ minHeight: '100vh' }}>
-      <h1>My Resume</h1>
       <iframe
-        src="/resume.pdf"
-        title="Resume"
+        src="/Personal-Website/resume.pdf"
+        title="Resume PDF"
         width="100%"
         height="900"
         style={{ border: 'none' }}
