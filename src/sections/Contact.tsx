@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
 export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
+  const { ref, isVisible } = useFadeInOnScroll();
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -11,7 +13,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-container" aria-labelledby="contact-heading">
+    <section 
+      ref={ref}
+      className={`section-container fade-in-section ${isVisible ? 'visible' : ''}`}
+      id="contact" 
+      aria-labelledby="contact-heading"
+    >
       <h2 id="contact-heading">Contact Me</h2>
 
       <div className="contact-wrapper">

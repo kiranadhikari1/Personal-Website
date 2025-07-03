@@ -1,13 +1,24 @@
 import { projects } from '../data/projects';
 import { FaGithub } from 'react-icons/fa';
+import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
 export default function Projects() {
+  const { ref, isVisible } = useFadeInOnScroll();
+
   return (
-    <section id="projects" className="section-container">
+    <section 
+      ref={ref}
+      className={`section-container fade-in-section ${isVisible ? 'visible' : ''}`}
+      id="projects"
+    >
       <h2>Projects</h2>
       <div className="project-grid">
-        {projects.map((proj) => (
-          <article key={proj.title} className="project-card">
+        {projects.map((proj, index) => (
+          <article 
+            key={proj.title} 
+            className={`project-card fade-in-item ${isVisible ? 'visible' : ''}`}
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
             <h3>
               {proj.icon && proj.icon.endsWith('.png') ? (
                 <img 
