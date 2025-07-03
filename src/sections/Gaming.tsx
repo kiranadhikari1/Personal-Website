@@ -22,7 +22,7 @@ export default function Gaming() {
     { name: 'Cyberpunk 2077', playtime: '34.6 hrs', image: '/Personal-Website/cyberpunk.png' },
     { name: 'Ark: Survival Evovled', playtime: '1352.6 hrs', image: '/Personal-Website/ark.png' },
     { name: 'Dead By Daylight', playtime: '443.3 hrs', image: '/Personal-Website/dbd.png' },
-    { name: 'Assassins Creed Origins', playtime: '41.4 hrs', image: '/Personal-Website=/aco.png' },
+    { name: 'Assassins Creed Origins', playtime: '41.4 hrs', image: '/Personal-Website/aso.png' },
     { name: 'Smite', playtime: '2074.6 hrs', image: '/Personal-Website/smite.png' }
   ];
 
@@ -57,7 +57,7 @@ export default function Gaming() {
         {/* Header Section */}
         <div className="gaming-header" style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <img
-            src="/Personal-Website/public/steampfp.png"
+            src="/Personal-Website/steampfp.png"
             className="gaming-profile-photo"
             style={{
               width: '150px',
