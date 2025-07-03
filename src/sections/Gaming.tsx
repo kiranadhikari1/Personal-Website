@@ -17,13 +17,13 @@ export default function Gaming() {
 
   // Favorite games with playtime (update with your actual games and hours)
   const favoriteGames = [
-    { name: 'Elden Ring', playtime: '117.2 hrs', image: '/Personal-Website/public/eldenring.png' },
-    { name: 'Terraria', playtime: '355.8 hrs', image: '/Personal-Website/public/terraria.png' },
-    { name: 'Cyberpunk 2077', playtime: '34.6 hrs', image: '/Personal-Website/public/cyberpunk.png' },
-    { name: 'Ark: Survival Evovled', playtime: '1352.6 hrs', image: '/Personal-Website/public/ark.png' },
-    { name: 'Dead By Daylight', playtime: '443.3 hrs', image: '/Personal-Website/public/dbd.png' },
-    { name: 'Assassins Creed Origins', playtime: '41.4 hrs', image: '/Personal-Website/public/aco.png' },
-    { name: 'Smite', playtime: '2074.6 hrs', image: '/Personal-Website/public/smite.png' }
+    { name: 'Elden Ring', playtime: '117.2 hrs', image: '/Personal-Website/eldenring.png' },
+    { name: 'Terraria', playtime: '355.8 hrs', image: '/Personal-Website/terraria.png' },
+    { name: 'Cyberpunk 2077', playtime: '34.6 hrs', image: '/Personal-Website/cyberpunk.png' },
+    { name: 'Ark: Survival Evovled', playtime: '1352.6 hrs', image: '/Personal-Website/ark.png' },
+    { name: 'Dead By Daylight', playtime: '443.3 hrs', image: '/Personal-Website/dbd.png' },
+    { name: 'Assassins Creed Origins', playtime: '41.4 hrs', image: '/Personal-Website=/aco.png' },
+    { name: 'Smite', playtime: '2074.6 hrs', image: '/Personal-Website/smite.png' }
   ];
 
   // Competitive achievements
