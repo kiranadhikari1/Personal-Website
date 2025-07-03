@@ -1,4 +1,5 @@
 import { socialLinks } from '../data/socialLinks';
+import { Link } from 'react-router-dom';
 
 interface Props {
   smoothScroll: (id: string) => void;

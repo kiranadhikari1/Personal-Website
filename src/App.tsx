@@ -4,8 +4,7 @@ import Landing from './sections/Landing';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import Social from './sections/Social';
-import About   from './sections/About';
-import './styles/globals.css';
+import About from './sections/About';
 
 export default function App() {
   const smoothScroll = (id: string) => {
@@ -29,7 +28,9 @@ export default function App() {
   }, []);
 
   const [theme, setTheme] = React.useState<'light' | 'dark'>(() =>
-    window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+      ? 'light'
+      : 'dark'
   );
   const toggleTheme = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
 
