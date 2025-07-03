@@ -29,7 +29,7 @@ export default function App() {
 
   const [theme, setTheme] = React.useState<'light' | 'dark'>(() =>
     window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
-      ? 'light'
+      ? 'dark'
       : 'dark'
   );
   const toggleTheme = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));

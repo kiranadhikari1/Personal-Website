@@ -608,3 +608,164 @@ body.light-theme .contact-form textarea:focus {
     transform: none;
   }
 }
+
+/* Gaming page styles */
+.gaming-header {
+  animation: fadeIn 1s ease-out;
+}
+
+.gaming-profile-photo {
+  transition: transform 0.3s ease;
+}
+
+.gaming-profile-photo:hover {
+  transform: scale(1.05);
+}
+
+/* Steam stats cards */
+.stat-card {
+  background: var(--card-bg, rgba(255, 255, 255, 0.1));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.2));
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--gold, #ffd700);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--text-secondary, #ccc);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Game cards */
+.game-card {
+  background: var(--card-bg, rgba(255, 255, 255, 0.1));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.2));
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.game-image {
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-image {
+  transform: scale(1.05);
+}
+
+/* Achievement cards */
+.achievement-card {
+  background: var(--card-bg, rgba(255, 255, 255, 0.1));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.2));
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold, #ffd700), var(--accent, #00ff88));
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .gaming-profile-photo {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .stats-grid,
+  .games-grid,
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Light theme adjustments */
+.light-theme .stat-card,
+.light-theme .game-card,
+.light-theme .achievement-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .stat-card:hover,
+.light-theme .game-card:hover,
+.light-theme .achievement-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation for sections */
+.steam-stats,
+.favorite-games,
+.competitive-section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.steam-stats {
+  animation-delay: 0.1s;
+}
+
+.favorite-games {
+  animation-delay: 0.2s;
+}
+
+.competitive-section {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

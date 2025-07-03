@@ -29,12 +29,18 @@ export default function About() {
           coding I enjoy gaming (Elden Ring!), reading tech blogs and exploring
           new tools.
         </p>
-        <Link
+        <div className="about-buttons" style={{ marginTop: '1rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <Link
             to="/resume"
             className="button primary"
-            style={{ marginTop: '1rem', display: 'inline-block' }}
             > Resume
-        </Link>
+          </Link>
+          <Link
+            to="/gaming"
+            className="button secondary"
+            > Gaming Hub
+          </Link>
+        </div>
       </div>
     </section>
   );
