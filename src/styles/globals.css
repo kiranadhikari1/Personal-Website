@@ -471,3 +471,50 @@ body.light-theme .contact-form textarea:focus {
 #about {
   scroll-margin-top: 80px;
 }
+
+.typing-cursor {
+  font-weight: 100;
+  color: var(--gold, #ffd700);
+  animation: blink 1s infinite;
+  display: inline-block;
+  margin-left: 2px;
+}
+
+.typing-cursor.visible {
+  opacity: 1;
+}
+
+.typing-cursor.hidden {
+  opacity: 0;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.button-group.fade-in,
+.scroll-down-indicator.fade-in {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.button-group.hidden,
+.scroll-down-indicator.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.typing-cursor {
+  text-shadow: 0 0 8px currentColor;
+}
