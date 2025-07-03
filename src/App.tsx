@@ -4,6 +4,7 @@ import Landing from './sections/Landing';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import Social from './sections/Social';
+import About   from './sections/About';
 import './styles/globals.css';
 
 export default function App() {
@@ -40,6 +41,7 @@ export default function App() {
     <>
       <Navbar smoothScroll={smoothScroll} active={active} theme={theme} toggleTheme={toggleTheme} />
       <Landing smoothScroll={smoothScroll} />
+      <About />
       <Projects />
       <Contact />
       <Social />

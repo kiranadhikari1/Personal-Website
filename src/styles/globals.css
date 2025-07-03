@@ -467,3 +467,7 @@ body.light-theme .contact-form textarea:focus {
   border: 3px solid var(--gold);
   flex-shrink: 0;
 }
+
+#about {
+  scroll-margin-top: 80px;
+}
