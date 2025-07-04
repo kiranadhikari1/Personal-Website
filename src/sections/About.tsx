@@ -37,7 +37,7 @@ export default function About() {
           textAlign: 'center',
           position: 'absolute',
           left: '90px',
-          top: '230px',
+          top: '205px',
           zIndex: 10
         }}>
           <img
@@ -57,10 +57,16 @@ export default function About() {
               Carleton University
             </div>
             <div className="degree" style={{ color: '#555', fontSize: '0.7rem', marginBottom: '0.2rem', lineHeight: '1.2' }}>
-              Bachelor of Computer Science
+              Bachelor of Computer Science Honours
+              <div className="gpa" style={{ color: '#888', fontSize: '0.6rem', marginTop: '0.1rem' }}>
+                With Distinction
+              </div>
+              <div className="gpa" style={{ color: '#888', fontSize: '0.6rem', marginTop: '0.1rem' }}>
+                Co-operative Education
+              </div>
             </div>
             <div className="year" style={{ color: '#666', fontSize: '0.6rem', backgroundColor: '#f8f9fa', padding: '0.15rem 0.3rem', borderRadius: '3px', fontWeight: '500' }}>
-              2020 - 2024
+              2021 - 2025
             </div>
           </div>
         </div>
