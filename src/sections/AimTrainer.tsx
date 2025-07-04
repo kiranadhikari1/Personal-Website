@@ -14,7 +14,6 @@ function AimTrainer() {
   const [totalShots, setTotalShots] = React.useState(0);
   const [hits, setHits] = React.useState(0);
   
-  const gameRef = React.useRef<HTMLDivElement | null>(null);
   const timerRef = React.useRef<number | undefined>(undefined);
   const spawnRef = React.useRef<number | undefined>(undefined);
   const gameStateRef = React.useRef(gameState);
@@ -100,9 +99,7 @@ function AimTrainer() {
     setTotalShots((prev) => prev + 1);
   };
   
-  interface MissedShotEvent extends React.MouseEvent<HTMLDivElement, MouseEvent> {}
-
-  const missedShot = (event: MissedShotEvent): void => {
+  const missedShot = (): void => {
     if (gameState === 'playing') {
       setTotalShots((prev) => prev + 1);
     }
