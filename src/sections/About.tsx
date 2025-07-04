@@ -17,6 +17,54 @@ export default function About() {
       <h2>About Me</h2>
 
       <div className="about-content">
+        {/* Education Section */}
+        <div className="education-container" style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          gap: '0.5rem', 
+          padding: '0.5rem',
+          backgroundColor: '#fff',
+          borderRadius: '6px',
+          border: '3px solid var(--primary-color, #3498db)',
+          borderTop: '3px solid var(--primary-color, #3498db)',
+          fontSize: '0.85rem',
+          width: 'fit-content',
+          minHeight: '80px',
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+          transition: 'all 0.3s ease',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          textAlign: 'center',
+          position: 'absolute',
+          left: '90px',
+          top: '230px',
+          zIndex: 10
+        }}>
+          <img
+            src="/Personal-Website/carletonlogo.png"
+            alt="Carleton University Logo"
+            className="university-logo"
+            style={{
+              width: '24px',
+              height: '24px',
+              objectFit: 'contain',
+              marginBottom: '0.2rem'
+            }}
+            loading="lazy"
+          />
+          <div className="education-details">
+            <div className="university-name" style={{ fontWeight: '600', fontSize: '0.8rem', color: 'var(--primary-color, #2c3e50)', marginBottom: '0.2rem', lineHeight: '1.2' }}>
+              Carleton University
+            </div>
+            <div className="degree" style={{ color: '#555', fontSize: '0.7rem', marginBottom: '0.2rem', lineHeight: '1.2' }}>
+              Bachelor of Computer Science
+            </div>
+            <div className="year" style={{ color: '#666', fontSize: '0.6rem', backgroundColor: '#f8f9fa', padding: '0.15rem 0.3rem', borderRadius: '3px', fontWeight: '500' }}>
+              2020 - 2024
+            </div>
+          </div>
+        </div>
+        
         <img
           src={profilePhoto}
           alt="Kiran Adhikari"
@@ -41,7 +89,7 @@ export default function About() {
           </div>
           
           {/* Small Timeline */}
-          <div className="mini-timeline">
+          <div className="mini-timeline" style={{ position: 'relative' }}>
             <div className="timeline-track">
               {experiences.map((exp, index) => (
                 <div key={exp.id} className="timeline-point">
