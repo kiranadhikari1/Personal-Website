@@ -96,33 +96,24 @@ function AimTrainer() {
     event.stopPropagation();
     setTargets((prev) => prev.filter((t) => t.id !== targetId));
     setScore((prev) => prev + 1);
-    
-    // Update hits and total shots together for accurate calculation
-    setHits((prevHits) => {
-      const newHits = prevHits + 1;
-      setTotalShots((prevTotal) => {
-        const newTotal = prevTotal + 1;
-        setAccuracy(Math.round((newHits / newTotal) * 100));
-        return newTotal;
-      });
-      return newHits;
-    });
+    setHits((prev) => prev + 1);
+    setTotalShots((prev) => prev + 1);
   };
   
   interface MissedShotEvent extends React.MouseEvent<HTMLDivElement, MouseEvent> {}
 
   const missedShot = (event: MissedShotEvent): void => {
     if (gameState === 'playing') {
-      setTotalShots((prevTotal) => {
-        const newTotal = prevTotal + 1;
-        setHits((prevHits) => {
-          setAccuracy(Math.round((prevHits / newTotal) * 100));
-          return prevHits;
-        });
-        return newTotal;
-      });
+      setTotalShots((prev) => prev + 1);
     }
   };
+  
+  // Calculate accuracy whenever hits or totalShots change
+  React.useEffect(() => {
+    if (totalShots > 0) {
+      setAccuracy(Math.round((hits / totalShots) * 100));
+    }
+  }, [hits, totalShots]);
   
   React.useEffect(() => {
     return () => {
