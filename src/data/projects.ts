@@ -12,28 +12,28 @@ export const projects: Project[] = [
   {
     title: 'Selenium Automated Web Game',
     description: 'Automates interaction with a web-based game using Selenium and Python.',
-    tech: ['Python'],
+    tech: ['Java', 'Selenium', 'Spring Boot', 'Node.js'],
     github: 'https://github.com/kiranadhikari1/Selenium-Automated-Interactive-Web-Game',
     icon: '🎮'
   },
   {
     title: 'Elevator Simulation',
     description: 'Simulates elevator movement and request handling in Java.',
-    tech: ['Java'],
+    tech: ['C++'],
     github: 'https://github.com/kiranadhikari1/elevatorSimulation',
     icon: '🛗'
   },
   {
     title: 'Neureset Device Simulator',
     description: 'Simulates hardware interaction for the Neureset medical device.',
-    tech: ['Java'],
+    tech: ['C++', 'QT'],
     github: 'https://github.com/kiranadhikari1/Neureset-Device-Simulator',
     icon: '🧠'
   },
   {
     title: 'SCMS & C-V2X in QNX vs Cloud',
     description: 'Comparison of QNX vs cloud deployment for SCMS and C-V2X systems.',
-    tech: ['Java'],
+    tech: ['Python', 'QNX', 'AWS', 'C'],
     github: 'https://github.com/kiranadhikari1/SCMS-and-C-V2X-In-QNX-vs-Cloud-Deployment',
     icon: '☁️'
   },
