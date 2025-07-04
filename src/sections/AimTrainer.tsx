@@ -96,8 +96,10 @@ function AimTrainer() {
     event.stopPropagation();
     setTargets((prev) => prev.filter((t) => t.id !== targetId));
     setScore((prev) => prev + 1);
-    setHits((prev) => {
-      const newHits = prev + 1;
+    
+    // Update hits and total shots together for accurate calculation
+    setHits((prevHits) => {
+      const newHits = prevHits + 1;
       setTotalShots((prevTotal) => {
         const newTotal = prevTotal + 1;
         setAccuracy(Math.round((newHits / newTotal) * 100));
@@ -111,9 +113,12 @@ function AimTrainer() {
 
   const missedShot = (event: MissedShotEvent): void => {
     if (gameState === 'playing') {
-      setTotalShots((prev: number) => {
-        const newTotal = prev + 1;
-        setAccuracy(Math.round((hits / newTotal) * 100));
+      setTotalShots((prevTotal) => {
+        const newTotal = prevTotal + 1;
+        setHits((prevHits) => {
+          setAccuracy(Math.round((prevHits / newTotal) * 100));
+          return prevHits;
+        });
         return newTotal;
       });
     }
