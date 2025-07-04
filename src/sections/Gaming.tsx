@@ -22,15 +22,30 @@ export default function Gaming() {
     { name: 'Cyberpunk 2077', playtime: '34.6 hrs', image: '/Personal-Website/cyberpunk.png' },
     { name: 'Ark: Survival Evovled', playtime: '1352.6 hrs', image: '/Personal-Website/ark.png' },
     { name: 'Dead By Daylight', playtime: '443.3 hrs', image: '/Personal-Website/dbd.png' },
-    { name: 'Assassins Creed Origins', playtime: '41.4 hrs', image: '/Personal-Website/aso.png' },
+    { name: 'Assassins Creed Origins', playtime: '41.4 hrs', image: '/Personal-Website/aco.png' },
     { name: 'Smite', playtime: '2074.6 hrs', image: '/Personal-Website/smite.png' }
   ];
 
-  // Competitive achievements
+  // Competitive achievements with images
   const competitiveAchievements = [
-    { game: 'Valorant', rank: 'Diamond 3', description: 'Highest Rank Achieved'},
-    { game: 'Smite', rank: 'Grandmaster', description: 'Beta Tester' },
-    { game: 'Marvel Rivals', rank: 'Grandmaster 1', description: 'Highest Rank Achieved' },
+    { 
+      game: 'Valorant', 
+      rank: 'Diamond 3', 
+      description: 'Highest Rank Achieved',
+      image: '/Personal-Website/valorant.png'
+    },
+    { 
+      game: 'Smite', 
+      rank: 'Grandmaster', 
+      description: 'Beta Tester',
+      image: '/Personal-Website/smite.png'
+    },
+    { 
+      game: 'Marvel Rivals', 
+      rank: 'Grandmaster 1', 
+      description: 'Highest Rank Achieved',
+      image: '/Personal-Website/marvelrivals.png'
+    },
   ];
 
   return (
@@ -148,23 +163,36 @@ export default function Gaming() {
           }}>
             {competitiveAchievements.map((achievement, index) => (
               <div key={index} className="achievement-card">
-                <h3 style={{ margin: '0 0 0.5rem 0', color: 'var(--gold, #ffd700)' }}>
-                  {achievement.game}
-                </h3>
-                <div className="rank" style={{ 
-                  fontSize: '1.3rem', 
-                  fontWeight: 'bold',
-                  margin: '0.5rem 0'
-                }}>
-                  {achievement.rank}
+                <img
+                  src={achievement.image}
+                  alt={achievement.game}
+                  className="achievement-image"
+                  style={{
+                    width: '100%',
+                    height: '140px',
+                    objectFit: 'cover',
+                    borderRadius: '8px 8px 0 0'
+                  }}
+                />
+                <div className="achievement-info" style={{ padding: '1rem' }}>
+                  <h3 style={{ margin: '0 0 0.5rem 0', color: 'var(--gold, #ffd700)' }}>
+                    {achievement.game}
+                  </h3>
+                  <div className="rank" style={{ 
+                    fontSize: '1.3rem', 
+                    fontWeight: 'bold',
+                    margin: '0.5rem 0'
+                  }}>
+                    {achievement.rank}
+                  </div>
+                  <p style={{ 
+                    color: 'var(--text-secondary)',
+                    margin: 0,
+                    fontSize: '0.9rem'
+                  }}>
+                    {achievement.description}
+                  </p>
                 </div>
-                <p style={{ 
-                  color: 'var(--text-secondary)',
-                  margin: 0,
-                  fontSize: '0.9rem'
-                }}>
-                  {achievement.description}
-                </p>
               </div>
             ))}
           </div>

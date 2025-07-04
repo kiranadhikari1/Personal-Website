@@ -11,7 +11,7 @@ export default function Landing({ smoothScroll }: Props) {
   const [currentPhase, setCurrentPhase] = useState<'name' | 'title' | 'complete'>('name');
 
   const fullName = "Hi, I'm Kiran Adhikari";
-  const fullTitle = "Front‑end developer passionate about React & TypeScript";
+  const fullTitle = "I write code and play games... sometimes";
 
   useEffect(() => {
     let timeoutId: number;

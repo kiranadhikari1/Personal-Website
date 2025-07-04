@@ -22,12 +22,8 @@ export default function About() {
           className="profile-photo"
           loading="lazy"
         />
-
         <p>
-          I'm a frontend developer who loves crafting elegant, responsive
-          web apps with React, TypeScript and modern UI/UX practices. Outside of
-          coding I enjoy gaming (Elden Ring!), reading tech blogs and exploring
-          new tools.
+          I'm a software developer who recently graduated from Carleton University. I currently work full time and game part time!
         </p>
         <div className="about-buttons" style={{ marginTop: '1rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Link
@@ -38,7 +34,7 @@ export default function About() {
           <Link
             to="/gaming"
             className="button secondary"
-            > Gaming Hub
+            > Gaming Profile
           </Link>
         </div>
       </div>

@@ -769,3 +769,7 @@ body.light-theme .contact-form textarea:focus {
     transform: translateY(0);
   }
 }
+
+a, .button {
+  text-decoration: none;
+}
