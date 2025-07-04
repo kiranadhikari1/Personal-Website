@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import AimTrainer from './AimTrainer'; // Import the separate AimTrainer component
 
 export default function Gaming() {
   // Scroll to top when component mounts
@@ -52,40 +52,57 @@ export default function Gaming() {
     <>
       {/* Simple navigation header */}
       <nav className="navbar" role="navigation" aria-label="Gaming navigation">
-        <Link 
-          to="/" 
+        <div 
           className="nav-logo"
           style={{ textDecoration: 'none' }}
         >
           Kiran Adhikari
-        </Link>
-        <Link 
-          to="/" 
+        </div>
+        <button 
           className="button secondary"
           style={{ marginLeft: 'auto' }}
+          onClick={() => window.history.back()}
         >
           ← Back to Home
-        </Link>
+        </button>
       </nav>
 
       <main className="section-container" style={{ minHeight: '100vh', paddingTop: '120px' }}>
-        {/* Header Section */}
-        <div className="gaming-header" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <img
-            src="/Personal-Website/steampfp.png"
-            className="gaming-profile-photo"
-            style={{
-              width: '150px',
-              height: '150px',
-              borderRadius: '50%',
-              objectFit: 'cover',
-              border: '4px solid var(--gold, #ffd700)',
-              marginBottom: '1rem'
-            }}
-          />
-          <h1>KingOfGames</h1>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem' }}>
-          </p>
+        {/* Header Section with Profile and Aim Trainer */}
+        <div className="gaming-header" style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'flex-end',
+          gap: '3rem',
+          marginBottom: '3rem',
+          flexWrap: 'wrap'
+        }}>
+          {/* Profile Section */}
+          <div style={{ textAlign: 'center' }}>
+            <img
+              src="/Personal-Website/steampfp.png"
+              className="gaming-profile-photo"
+              style={{
+                width: '150px',
+                height: '150px',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                border: '4px solid var(--gold, #ffd700)',
+                marginBottom: '1rem'
+              }}
+            />
+            <h1 style={{ margin: '0' }}>KingOfGames</h1>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', margin: '0.5rem 0' }}>
+            </p>
+          </div>
+
+          <div style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center' 
+          }}>
+            <AimTrainer />
+          </div>
         </div>
 
         {/* Steam Profile Stats */}
