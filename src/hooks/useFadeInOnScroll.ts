@@ -5,6 +5,12 @@ export const useFadeInOnScroll = (options = {}) => {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
+      ...options
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -12,10 +18,7 @@ export const useFadeInOnScroll = (options = {}) => {
           observer.unobserve(entry.target);
         }
       },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px', ...options
-      }
+      observerOptions
     );
 
     if (ref.current) {
@@ -23,6 +26,7 @@ export const useFadeInOnScroll = (options = {}) => {
     }
 
     return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { ref, isVisible };
