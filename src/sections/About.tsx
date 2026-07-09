@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 import { experiences } from '../data/experience';
+import { techStack } from '../data/techStack';
 
 const profilePhoto = '/Personal-Website/background.png';
 
@@ -10,105 +11,70 @@ export default function About() {
   return (
     <section 
       ref={ref}
-      className={`about-section fade-in-section ${isVisible ? 'visible' : ''}`} 
+      className={`section-container fade-in-section ${isVisible ? 'visible' : ''}`}
       id="about" 
       aria-label="About Me"
     >
-      <h2>About Me</h2>
+      <div className="about-section">
+        <h2>About Me</h2>
 
-      <div className="about-content">
-        {/* Education Section */}
-        <div className="education-container" style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          gap: '0.5rem', 
-          padding: '0.5rem',
-          backgroundColor: '#fff',
-          borderRadius: '6px',
-          border: '3px solid var(--primary-color, #3498db)',
-          borderTop: '3px solid var(--primary-color, #3498db)',
-          fontSize: '0.85rem',
-          width: 'fit-content',
-          minHeight: '80px',
-          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-          transition: 'all 0.3s ease',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          textAlign: 'center',
-          position: 'absolute',
-          left: '90px',
-          top: '205px',
-          zIndex: 10
-        }}>
+        <div className="about-content">
+          {/* Profile Photo */}
           <img
-            src="/Personal-Website/carletonlogo.png"
-            alt="Carleton University Logo"
-            className="university-logo"
-            style={{
-              width: '24px',
-              height: '24px',
-              objectFit: 'contain',
-              marginBottom: '0.2rem'
-            }}
+            src={profilePhoto}
+            alt="Kiran Adhikari"
+            className="profile-photo"
             loading="lazy"
           />
-          <div className="education-details">
-            <div className="university-name" style={{ fontWeight: '600', fontSize: '0.8rem', color: 'var(--primary-color, #2c3e50)', marginBottom: '0.2rem', lineHeight: '1.2' }}>
-              Carleton University
+
+          {/* About Text & Info */}
+          <div className="about-text">
+            <p>
+              I'm a full-stack software developer with a passion for building elegant, scalable solutions. Recently graduated from Carleton University with a degree in Computer Science, I'm currently working full-time at Ross Video while maintaining a keen interest in gaming and technology.
+            </p>
+            <p>
+              I specialize in modern web technologies and enjoy crafting user-friendly interfaces with React and TypeScript. I'm constantly learning and exploring new technologies to expand my skillset.
+            </p>
+
+            {/* Action Buttons */}
+            <div className="about-buttons">
+              <Link to="/resume" className="button btn-primary">
+                View Resume
+              </Link>
+              <Link to="/gaming" className="button btn-secondary">
+                Gaming Profile
+              </Link>
             </div>
-            <div className="degree" style={{ color: '#555', fontSize: '0.7rem', marginBottom: '0.2rem', lineHeight: '1.2' }}>
-              Bachelor of Computer Science Honours
-              <div className="gpa" style={{ color: '#888', fontSize: '0.6rem', marginTop: '0.1rem' }}>
-                With Distinction
-              </div>
-              <div className="gpa" style={{ color: '#888', fontSize: '0.6rem', marginTop: '0.1rem' }}>
-                Co-operative Education
-              </div>
-            </div>
-            <div className="year" style={{ color: '#666', fontSize: '0.6rem', backgroundColor: '#f8f9fa', padding: '0.15rem 0.3rem', borderRadius: '3px', fontWeight: '500' }}>
-              2021 - 2025
-            </div>
-          </div>
-        </div>
-        
-        <img
-          src={profilePhoto}
-          alt="Kiran Adhikari"
-          className="profile-photo"
-          loading="lazy"
-        />
-        <div className="about-text">
-          <p>
-            I'm a software developer who recently graduated from Carleton University. I currently work full time and game part time!
-          </p>
-          <div className="about-buttons" style={{ marginTop: '1rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link
-              to="/resume"
-              className="button primary"
-              > Resume
-            </Link>
-            <Link
-              to="/gaming"
-              className="button secondary"
-              > Gaming Profile
-            </Link>
-          </div>
-          
-          {/* Small Timeline */}
-          <div className="mini-timeline" style={{ position: 'relative' }}>
-            <div className="timeline-track">
-              {experiences.map((exp, index) => (
-                <div key={exp.id} className="timeline-point">
-                  <div className="timeline-dot"></div>
-                  <div className="timeline-card">
-                    <div className="company-name">{exp.company}</div>
-                    <div className="position-title">{exp.position}</div>
-                    <div className="type">{exp.type}</div>
-                    <div className="duration">{exp.duration}</div>
+
+            {/* Tech Stack */}
+            <div className="tech-stack">
+              <h3>Tech Stack</h3>
+              <div className="tech-icons">
+                {techStack.map((tech) => (
+                  <div key={tech.name} className="tech-icon" title={tech.name}>
+                    <span className="tech-icon-img">{tech.icon}</span>
+                    <span className="tech-icon-label">{tech.name}</span>
                   </div>
-                  {index < experiences.length - 1 && <div className="timeline-connector"></div>}
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Experience Timeline */}
+            <div className="mini-timeline">
+              <h3>Experience</h3>
+              <div className="timeline-track">
+                {experiences.map((exp) => (
+                  <div key={exp.id} className="timeline-point">
+                    <div className="timeline-dot"></div>
+                    <div className="timeline-card">
+                      <div className="company-name">{exp.company}</div>
+                      <div className="position-title">{exp.position}</div>
+                      <span className={`type ${exp.type}`}>{exp.type}</span>
+                      <div className="duration">{exp.duration}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
