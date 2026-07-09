@@ -27,15 +27,17 @@ export default function App() {
     return () => observer.disconnect();
   }, []);
 
-  const [theme, setTheme] = React.useState<'light' | 'dark'>(() =>
-    window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
-      ? 'dark'
-      : 'dark'
-  );
+  const [theme, setTheme] = React.useState<'light' | 'dark'>(() => {
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    return 'light';
+  });
+
   const toggleTheme = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
 
   React.useEffect(() => {
-    document.body.classList.toggle('light-theme', theme === 'light');
+    document.body.classList.toggle('dark-theme', theme === 'dark');
   }, [theme]);
 
   return (
