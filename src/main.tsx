@@ -5,7 +5,10 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import Resume from './sections/Resume';
 import Gaming from './sections/Gaming';
-import './styles/globals.css';
+import './index.css';
+import './App.css';
+import './styles/navbar.css';
+import './styles/hero.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
