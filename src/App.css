@@ -1,42 +1,78 @@
+/* ============================================================================
+   App Layout & Container Styles
+   ========================================================================== */
+
 #root {
-  max-width: 1280px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sections */
+section {
+  width: 100%;
+  padding: var(--space-20) var(--space-8);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: var(--space-12) var(--space-4);
+  }
+}
+
+/* Section Container */
+.section-container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  padding: 0;
+}
+
+.section-container h2 {
   text-align: center;
+  margin-bottom: var(--space-12);
+  position: relative;
+  padding-bottom: var(--space-6);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.section-container h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-accent);
+  margin: var(--space-4) auto 0;
+  border-radius: 2px;
 }
 
-@keyframes logo-spin {
+/* Fade-in animations */
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.fade-in-section {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
-.card {
-  padding: 2em;
+.fade-in-section.visible {
+  opacity: 1;
 }
 
-.read-the-docs {
-  color: #888;
+.fade-in-item {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.fade-in-item.visible {
+  opacity: 1;
 }

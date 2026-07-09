@@ -88,10 +88,8 @@ function AimTrainer() {
       spawnTarget();
     }, nextSpawn);
   };
-  
-  interface HitTargetEvent extends React.MouseEvent<HTMLDivElement, MouseEvent> {}
 
-  const hitTarget = (targetId: number, event: HitTargetEvent) => {
+  const hitTarget = (targetId: number, event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     event.stopPropagation();
     setTargets((prev) => prev.filter((t) => t.id !== targetId));
     setScore((prev) => prev + 1);
