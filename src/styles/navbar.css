@@ -13,9 +13,10 @@
   align-items: center;
   justify-content: space-between;
   z-index: var(--z-sticky);
-  backdrop-filter: blur(8px);
-  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.9);
   transition: all var(--transition-base);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
 }
 
 body.dark-theme .navbar {
