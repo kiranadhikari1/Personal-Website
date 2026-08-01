@@ -105,6 +105,20 @@ body.dark-theme {
   color-scheme: dark;
 }
 
+/* Light Mode */
+body.light-theme {
+  --color-bg-primary: #f6f4ee;
+  --color-bg-secondary: #fbfaf6;
+  --color-text-primary: #111827;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748b;
+  --color-border: #d8d4c7;
+  --color-accent: #4f46e5;
+  --color-accent-hover: #4338ca;
+
+  color-scheme: light;
+}
+
 /* ============================================================================
    Global Styles
    ========================================================================== */

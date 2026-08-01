@@ -18,7 +18,8 @@ html,
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
-  background-image: url('/background.png');
+  background-color: #0f172a;
+  background-image: url('/Personal-Website/background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -27,39 +28,148 @@ html,
 }
 
 body.light-theme {
-  background-color: var(--light-bg);
-  color: var(--dark-text);
+  background-color: #f6f4ee;
+  color: #111827;
 }
 
 body.light-theme .navbar {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(246, 244, 238, 0.9);
   backdrop-filter: blur(10px);
-  color: var(--dark-text);
+  color: #111827;
+  border-bottom-color: rgba(15, 23, 42, 0.12);
+}
+
+body.light-theme .nav-button,
+body.light-theme .nav-social-link,
+body.light-theme .nav-logo {
+  color: #111827;
+}
+
+body.light-theme .nav-button:hover,
+body.light-theme .nav-social-link:hover {
+  background-color: rgba(79, 70, 229, 0.08);
+  color: #111827;
 }
 
 body.light-theme .project-card {
-  background-color: #f0f0f0;
-  color: var(--dark-text);
+  background-color: rgba(253, 252, 249, 0.92);
+  color: #111827;
 }
 
 body.light-theme .tech-list li {
-  background-color: #ddd;
-  color: #555;
+  background-color: #e8e4d8;
+  color: #334155;
 }
 
 body.light-theme .contact-wrapper {
-  background-color: rgba(245, 245, 245, 0.85);
+  background-color: rgba(253, 252, 249, 0.92);
 }
 
 body.light-theme .contact-form input,
 body.light-theme .contact-form textarea {
-  background-color: #f0f0f0;
-  color: var(--dark-text);
+  background-color: #f8f7f3;
+  color: #111827;
 }
 
 body.light-theme .contact-form input:focus,
 body.light-theme .contact-form textarea:focus {
-  background-color: #e0e0e0;
+  background-color: #f3f0e8;
+}
+
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6,
+body.light-theme p,
+body.light-theme .about-section,
+body.light-theme .projects-section,
+body.light-theme .contact-section,
+body.light-theme .social-section,
+body.light-theme .landing-title,
+body.light-theme .landing-subtitle,
+body.light-theme .about-text,
+body.light-theme .about-text p,
+body.light-theme .contact-cta h3,
+body.light-theme .contact-cta p,
+body.light-theme .project-card,
+body.light-theme .project-card h3,
+body.light-theme .project-card p,
+body.light-theme .social-footer p,
+body.light-theme .stat-card,
+body.light-theme .game-card,
+body.light-theme .achievement-card,
+body.light-theme .stat-number,
+body.light-theme .stat-label,
+body.light-theme .company-name,
+body.light-theme .position-title,
+body.light-theme .duration,
+body.light-theme .timeline-card,
+body.light-theme .tech-icon-label,
+body.light-theme .email-link,
+body.light-theme .contact-form label {
+  color: #111827;
+}
+
+body.light-theme .landing-title,
+body.light-theme .landing-subtitle,
+body.light-theme .contact-cta h3,
+body.light-theme .contact-cta p,
+body.light-theme .project-card h3,
+body.light-theme .project-card p,
+body.light-theme .about-section,
+body.light-theme .projects-section,
+body.light-theme .contact-section,
+body.light-theme .social-section,
+body.light-theme .title,
+body.light-theme .section-title {
+  text-shadow: none;
+}
+
+body.light-theme .landing-title {
+  color: #111827;
+}
+
+body.light-theme .landing-subtitle {
+  color: #475569;
+}
+
+body.light-theme .about-text p,
+body.light-theme .project-card p,
+body.light-theme .contact-cta p,
+body.light-theme .social-footer p,
+body.light-theme .position-title,
+body.light-theme .duration,
+body.light-theme .stat-label,
+body.light-theme .tech-icon-label,
+body.light-theme .timeline-card .position-title {
+  color: #334155;
+}
+
+body.light-theme .nav-button.active,
+body.light-theme .nav-button:hover,
+body.light-theme .nav-social-link:hover,
+body.light-theme .project-links a,
+body.light-theme .email-link {
+  color: #1f2937;
+}
+
+body.light-theme .project-links a:hover,
+body.light-theme .email-link:hover {
+  color: #4338ca;
+}
+
+body.light-theme .tech-list li {
+  color: #111827;
+}
+
+body.light-theme .social-icons-large a {
+  color: #334155;
+}
+
+body.light-theme .social-icons-large a:hover {
+  color: white;
 }
 
 /* ───────────────────────────

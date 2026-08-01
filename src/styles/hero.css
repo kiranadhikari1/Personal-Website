@@ -32,6 +32,10 @@
   max-width: 1200px;
   width: 100%;
   z-index: 1;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .landing-content {
@@ -39,7 +43,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: var(--space-6);
+  width: min(100%, 900px);
+  margin: 0 auto;
 }
 
 .landing-title {

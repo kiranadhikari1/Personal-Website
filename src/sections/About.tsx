@@ -45,7 +45,9 @@ export default function About() {
                 Gaming Profile
               </Link>
             </div>
+          </div>
 
+          <div className="about-details">
             {/* Tech Stack */}
             <div className="tech-stack">
               <h3>Tech Stack</h3>

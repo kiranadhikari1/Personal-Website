@@ -6,6 +6,7 @@ import App from './App';
 import Resume from './sections/Resume';
 import Gaming from './sections/Gaming';
 import './index.css';
+import './styles/globals.css';
 import './App.css';
 import './styles/navbar.css';
 import './styles/hero.css';

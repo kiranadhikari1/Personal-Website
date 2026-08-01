@@ -1,7 +1,44 @@
 import React from 'react';
 import AimTrainer from './AimTrainer'; // Import the separate AimTrainer component
+import { socialLinks } from '../data/socialLinks';
 
 export default function Gaming() {
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About Me' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'contact', label: 'Contact Me' },
+    { id: 'social', label: 'Social' },
+  ];
+
+  const [theme, setTheme] = React.useState<'light' | 'dark'>(() => {
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    return 'dark';
+  });
+
+  const toggleTheme = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+
+  React.useEffect(() => {
+    document.body.classList.toggle('dark-theme', theme === 'dark');
+    document.body.classList.toggle('light-theme', theme === 'light');
+  }, [theme]);
+
+  const goHome = (id?: string) => {
+    window.location.hash = '#/';
+    window.scrollTo(0, 0);
+
+    if (id) {
+      setTimeout(() => {
+        const target = document.getElementById(id);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 50);
+    }
+  };
+
   // Scroll to top when component mounts
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -50,21 +87,53 @@ export default function Gaming() {
 
   return (
     <>
-      {/* Simple navigation header */}
       <nav className="navbar" role="navigation" aria-label="Gaming navigation">
-        <div 
+        <button
+          type="button"
           className="nav-logo"
-          style={{ textDecoration: 'none' }}
+          style={{ textDecoration: 'none', background: 'transparent', border: 'none', padding: 0 }}
+          onClick={() => goHome()}
         >
           Kiran Adhikari
-        </div>
-        <button 
-          className="button secondary"
-          style={{ marginLeft: 'auto' }}
-          onClick={() => window.history.back()}
-        >
-          ← Back to Home
         </button>
+
+        <div className="nav-links">
+          {navItems.map(({ id, label }) => (
+            <button
+              key={id}
+              className="nav-button"
+              onClick={() => goHome(id)}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        <div className="nav-socials" aria-label="Social media links">
+          {socialLinks.slice(0, 2).map(({ href, label, svgPath }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              title={label}
+              className="nav-social-link"
+            >
+              <svg height="24" width="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d={svgPath} />
+              </svg>
+            </a>
+          ))}
+          <button
+            className="theme-toggle nav-button"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            title="Toggle theme"
+          >
+            {theme === 'dark' ? '🌞' : '🌙'}
+          </button>
+        </div>
       </nav>
 
       <main className="section-container" style={{ minHeight: '100vh', paddingTop: '120px' }}>
@@ -72,10 +141,11 @@ export default function Gaming() {
         <div className="gaming-header" style={{ 
           display: 'flex', 
           alignItems: 'center', 
-          justifyContent: 'flex-end',
+          justifyContent: 'center',
           gap: '3rem',
           marginBottom: '3rem',
-          flexWrap: 'wrap'
+          flexWrap: 'wrap',
+          width: '100%'
         }}>
           {/* Profile Section */}
           <div style={{ textAlign: 'center' }}>
