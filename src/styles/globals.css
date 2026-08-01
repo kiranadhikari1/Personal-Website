@@ -18,7 +18,8 @@ html,
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
-  background-image: url('/background.png');
+  background-color: #0f172a;
+  background-image: url('/Personal-Website/background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
