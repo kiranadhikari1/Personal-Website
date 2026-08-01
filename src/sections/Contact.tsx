@@ -27,8 +27,8 @@ export default function Contact() {
 
         <div className="contact-cta">
           <p>Have a question or want to collaborate?</p>
-          <a href="mailto:kiran@example.com" className="email-link">
-            kiran@example.com
+          <a href="mailto:kiranadhikari11@gmail.com" className="email-link">
+            kiranadhikari11@gmail.com
           </a>
         </div>
 
